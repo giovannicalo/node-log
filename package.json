@@ -1,0 +1,33 @@
+{
+	"author": {
+		"email": "giovanni.calo@live.it",
+		"name": "Giovanni Calò",
+		"url": "https://github.com/giovannicalo"
+	},
+	"bugs": {
+		"url": "https://github.com/giovannicalo/node-log/issues"
+	},
+	"dependencies": {
+		"chalk": "^2.4.2",
+		"pretty-error": "^2.1.1"
+	},
+	"description": "Log",
+	"devDependencies": {
+		"eslint": "^6.0.1",
+		"eslint-config-giovanni": "giovannicalo/eslint-config"
+	},
+	"homepage": "https://github.com/giovannicalo/node-log",
+	"keywords": ["log"],
+	"license": "MIT",
+	"main": "source/index.js",
+	"name": "log",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/giovannicalo/node-log.git"
+	},
+	"scripts": {
+		"lint": "eslint -f pretty .",
+		"prepublishOnly": "npm run lint"
+	},
+	"version": "0.0.0"
+}

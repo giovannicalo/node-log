@@ -14,7 +14,8 @@
 	"description": "Log",
 	"devDependencies": {
 		"eslint": "^6.0.1",
-		"eslint-config-giovanni": "giovannicalo/eslint-config"
+		"eslint-config-giovanni": "giovannicalo/eslint-config",
+		"jest": "^24.8.0"
 	},
 	"homepage": "https://github.com/giovannicalo/node-log",
 	"keywords": ["log"],
@@ -27,7 +28,8 @@
 	},
 	"scripts": {
 		"lint": "eslint -f pretty .",
-		"prepublishOnly": "npm run lint"
+		"prepublishOnly": "npm test && npm run lint",
+		"test": "jest"
 	},
 	"version": "0.0.0"
 }

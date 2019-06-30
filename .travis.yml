@@ -1,3 +1,3 @@
 language: "node_js"
 node_js: "12.5.0"
-script: "npm run lint && npm test && cat coverage/lcov.ingo | node node_modules/coveralls/bin/coveralls"
+script: "npm run lint && npm test && cat coverage/lcov.info | node node_modules/coveralls/bin/coveralls"

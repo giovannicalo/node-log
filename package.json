@@ -13,6 +13,7 @@
 	},
 	"description": "Log",
 	"devDependencies": {
+		"coveralls": "^3.0.4",
 		"eslint": "^6.0.1",
 		"eslint-config-giovanni": "giovannicalo/eslint-config",
 		"jest": "^24.8.0"
@@ -27,8 +28,9 @@
 		"url": "https://github.com/giovannicalo/node-log.git"
 	},
 	"scripts": {
+		"coverage": "jest --coverageReporters=text-lcov | coveralls",
 		"lint": "eslint -f pretty .",
-		"prepublishOnly": "npm test && npm run lint",
+		"prepublishOnly": "npm run lint && npm test",
 		"test": "jest"
 	},
 	"version": "0.0.0"

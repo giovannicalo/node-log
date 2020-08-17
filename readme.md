@@ -1,4 +1,7 @@
-# Node Log <br /> [![Dependency Status](https://david-dm.org/giovannicalo/node-log/status.svg)](https://david-dm.org/giovannicalo/node-log) [![Build Status](https://travis-ci.org/giovannicalo/node-log.svg?branch=master)](https://travis-ci.org/giovannicalo/node-log) [![Coverage Status](https://coveralls.io/repos/github/giovannicalo/node-log/badge.svg?branch=master)](https://coveralls.io/github/giovannicalo/node-log?branch=master)
+# Node Log
+
+[![Build Status](https://travis-ci.org/giovannicalo/node-log.svg?branch=master)](https://travis-ci.org/giovannicalo/node-log)
+[![Coverage Status](https://coveralls.io/repos/github/giovannicalo/node-log/badge.svg?branch=master)](https://coveralls.io/github/giovannicalo/node-log?branch=master)
 
 ## Installation
 

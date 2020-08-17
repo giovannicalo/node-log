@@ -1,12 +1,12 @@
 const write = require("./write");
 
 module.exports = (level, color) => {
-	const formattedLevel = level.toUpperCase().padEnd(7);
-	return (message, values) => {
+	const enhancedLevel = level.toUpperCase().padEnd(7);
+	return (strings, ...values) => {
 		write({
 			color,
-			level: formattedLevel,
-			message,
+			level: enhancedLevel,
+			strings,
 			values
 		});
 	};

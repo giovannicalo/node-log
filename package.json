@@ -34,6 +34,7 @@
 		"coverage": "jest --coverageReporters=text-lcov | coveralls",
 		"lint": "eslint -f pretty .",
 		"prepublishOnly": "npm run lint && npm test",
+		"start": "jest --watch",
 		"test": "jest"
 	},
 	"version": "0.0.0"

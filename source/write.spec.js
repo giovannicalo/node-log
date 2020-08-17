@@ -5,8 +5,8 @@ const write = require("./write");
 const parameters = {
 	color: "cyan",
 	level: "FOO    ",
-	message: "Foo {{bar}}",
-	values: { bar: 42 }
+	strings: ["Foo ", ""],
+	values: [42]
 };
 
 it("should print a message in the correct format when colors are supported", () => {

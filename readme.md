@@ -16,28 +16,22 @@ npm install giovannicalo/node-log
 ```javascript
 const log = require("log");
 
-log.info("Foo {{bar}}", {
-	bar: 42
-});
-// [2019-06-29T23:10:33.751Z] [INFO   ] Foo 42
+log.info`Foo ${42}`;
+// [2020-08-17T21:57:05.640Z] [INFO   ] Foo 42
 
-log.warning("Bar {{foobar}}", {
-	foobar: { foo: "bar" }
-});
-// [2019-06-29T23:10:33.755Z] [WARNING] Bar { foo: 'bar' }
+log.warning`Bar ${{ foo: "bar" }}`;
+// [2020-08-17T21:57:05.642Z] [WARNING] Bar { foo: 'bar' }
 
-log.error("Foo bar {{error}}", {
-	error: new Error("Error")
-});
-// [2019-06-29T23:10:33.758Z] [ERROR  ] Foo bar   Error: Error
+log.error`Foo bar ${new Error("Error")}`;
+// [2020-08-17T21:57:05.644Z] [ERROR  ] Foo bar   Error: Error
 ```
 
 ## API
 
-### log.error(message, values)
+### log.error(strings, ...values)
 
-### log.info(message, values)
+### log.info(strings, ...values)
 
-### log.warning(message, values)
+### log.warning(strings, ...values)
 
-Prints the given `message`, replacing any placeholders (e.g. `{{placeholder}}`) with enhanced values from the `values` object, in addition to the current timestamp and log level.
+Prints the given message, interpolating `strings` and enhanced `values`, in addition to the current UTC timestamp and log level.

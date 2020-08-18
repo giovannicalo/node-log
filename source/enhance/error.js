@@ -1,9 +1,10 @@
-const { readFileSync } = require("fs");
-const { dirname, join } = require("path");
+const { existsSync, readFileSync } = require("fs");
 
 const chalk = require("chalk");
 
-const rootDirectory = join(dirname(require.main.filename), "/");
+const findRoot = require("./find-root");
+
+const rootDirectory = findRoot(require.main.filename);
 
 const enhanceError = ({ message, name, stack }) => {
 	return `${
@@ -17,16 +18,16 @@ const enhanceError = ({ message, name, stack }) => {
 			);
 			if (match) {
 				const { groups: { column, line, method, path } } = match;
-				if (path && !path.startsWith("internal")) {
+				if (path && existsSync(path)) {
 					const code = readFileSync(path, "utf-8").split("\n").slice(line - 1, line)[0];// TODO: Make asynchronous
 					return `${
 						trace
 					}${
 						index ? "\n" : ""
 					}  ${
-						method
+						method || "<unknown>"
 					}\n  ${
-						chalk.gray(path.replace(rootDirectory, ""))
+						chalk.gray(path.replace(rootDirectory, "").replace(/\\/gu, "/"))
 					}:${
 						chalk.yellowBright(line)
 					}:${

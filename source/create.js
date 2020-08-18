@@ -1,6 +1,6 @@
 const write = require("./write");
 
-module.exports = (level, color) => {
+const create = (level, color) => {
 	const enhancedLevel = level.toUpperCase().padEnd(7);
 	return (strings, ...values) => {
 		write({
@@ -11,3 +11,5 @@ module.exports = (level, color) => {
 		});
 	};
 };
+
+module.exports = create;

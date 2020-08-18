@@ -1,6 +1,6 @@
 const chalk = require("chalk");
 
-const enhance = require("./enhance");
+const enhance = require(".");
 
 it("should enhance an array when colors are not supported", () => {
 	chalk.level = 0;
@@ -14,9 +14,7 @@ it("should enhance an error when colors are not supported", () => {
 
 it("should enhance an error when colors are supported", () => {
 	chalk.level = 1;
-	expect(enhance(new Error("Foo"))).toMatch(
-		/^ {2}\u001B\[0m\u001B\[97m\u001B\[41mError\u001B\[0m\u001B\[90m:\u001B\[0m\u001B\[37m \u001B\[0m\u001B\[97mFoo\u001B\[0m/u // eslint-disable-line no-control-regex
-	);
+	expect(enhance(new Error("Foo"))).toMatch(/^\u001B\[93mError\u001B\[39m: Foo/u); // eslint-disable-line no-control-regex
 });
 
 it("should enhance a number when colors are supported", () => {

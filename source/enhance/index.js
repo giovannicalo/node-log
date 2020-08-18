@@ -1,24 +1,28 @@
 const { inspect } = require("util");
 
 const chalk = require("chalk");
-const PrettyError = require("pretty-error");
 
-const prettyError = new PrettyError();
+const enhanceError = require("./error");
 
-module.exports = (value) => {
+const enhance = (value) => {
 	if (chalk.level) {
 		if (value instanceof Error) {
-			return prettyError.render(value);
+			return enhanceError(value);
 		} else if (typeof value === "string") {
 			return chalk.green(value);
 		} else {
-			return inspect(value, { colors: true });
+			return inspect(value, {
+				colors: true,
+				sorted: true
+			});
 		}
 	} else if (value instanceof Error) {
-		return value.stack;
+		return value.stack.replace(/ {4}/gu, "\t");
 	} else if (typeof value === "object") {
 		return JSON.stringify(value, null, "\t");
 	} else {
 		return value;
 	}
 };
+
+module.exports = enhance;

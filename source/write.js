@@ -2,7 +2,7 @@ const chalk = require("chalk");
 
 const enhance = require("./enhance");
 
-module.exports = ({ color, level, strings, values }) => {
+const write = ({ color, level, strings, values }) => {
 	console.log(`[${
 		chalk.magenta(new Date().toISOString())
 	}] [${
@@ -17,3 +17,5 @@ module.exports = ({ color, level, strings, values }) => {
 		}`;
 	}, "")}`);
 };
+
+module.exports = write;

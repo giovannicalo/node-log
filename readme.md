@@ -17,13 +17,17 @@ npm install giovannicalo/node-log
 const log = require("log");
 
 log.info`Foo ${42}`;
-// [2020-08-17T21:57:05.640Z] [INFO   ] Foo 42
+// [2020-08-18T04:53:01.777Z] [INFO   ] Foo 42
 
 log.warning`Bar ${{ foo: "bar" }}`;
-// [2020-08-17T21:57:05.642Z] [WARNING] Bar { foo: 'bar' }
+// [2020-08-18T04:53:01.781Z] [WARNING] Bar { foo: 'bar' }
 
-log.error`Foo bar ${new Error("Error")}`;
-// [2020-08-17T21:57:05.644Z] [ERROR  ] Foo bar   Error: Error
+log.error`Foo bar ${new Error("Something went wrong")}`;
+// [2020-08-18T04:57:18.066Z] [ERROR  ] Foo bar Error: Something went wrong
+//   Object.<anonymous>
+//   foo.js:5:21
+//   log.error`Foo bar ${new Error("Something went wrong")}`;
+//                       ^
 ```
 
 ## API

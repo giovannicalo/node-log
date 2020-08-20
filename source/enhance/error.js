@@ -19,7 +19,7 @@ const enhanceError = ({ message, name, stack }) => {
 			if (match) {
 				const { groups: { column, line, method, path } } = match;
 				if (path && existsSync(path)) {
-					const code = readFileSync(path, "utf-8").split("\n").slice(line - 1, line)[0];// TODO: Make asynchronous
+					const code = readFileSync(path, "utf-8").split("\n").slice(line - 1, line)[0]; // TODO: Make asynchronous
 					return `${
 						trace
 					}${

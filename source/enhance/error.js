@@ -22,7 +22,7 @@ const enhanceError = ({ message, name, stack }) => {
 				}  ${
 					method || "<unknown>"
 				}\n  ${
-					chalk.gray(path.replace(rootDirectory, "").replace(/\\/gu, "/"))
+					chalk.gray(path.replace(rootDirectory, "").replaceAll("\\", "/"))
 				}:${
 					chalk.yellowBright(line)
 				}:${
@@ -30,7 +30,7 @@ const enhanceError = ({ message, name, stack }) => {
 				}\n  ${
 					chalk.redBright(code.replace(/^\s*/u, ""))
 				}\n  ${
-					chalk.cyanBright(new Array(column - code.match(/^\s*/u)[0].length - 1).fill(" ").concat(["^"]).join(""))
+					chalk.cyanBright([...new Array(column - code.match(/^\s*/u)[0].length - 1).fill(" "), "^"].join(""))
 				}`;
 			}
 		}

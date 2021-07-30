@@ -1,7 +1,7 @@
 # Node Log
 
-[![Build Status](https://travis-ci.org/giovannicalo/node-log.svg?branch=master)](https://travis-ci.org/giovannicalo/node-log)
-[![Coverage Status](https://coveralls.io/repos/github/giovannicalo/node-log/badge.svg?branch=master)](https://coveralls.io/github/giovannicalo/node-log?branch=master)
+[![Build Status](https://travis-ci.com/giovannicalo/node-log.svg?branch=master)](https://travis-ci.com/giovannicalo/node-log)
+[![Coverage Status](https://coveralls.io/repos/github/giovannicalo/node-log/badge.svg)](https://coveralls.io/github/giovannicalo/node-log)
 
 ## Installation
 
@@ -32,10 +32,10 @@ log.error`Foo bar ${new Error("Something went wrong")}`;
 
 ## API
 
-### log.error(strings, ...values)
+### `error(strings: string[], ...values: any): void`
 
-### log.info(strings, ...values)
+### `info(strings: string[], ...values: any): void`
 
-### log.warning(strings, ...values)
+### `warning(strings: string[], ...values: any): void`
 
 Prints the given message, interpolating `strings` and enhanced `values`, in addition to the current UTC timestamp and log level.

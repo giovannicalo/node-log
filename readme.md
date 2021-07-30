@@ -9,7 +9,7 @@
 npm install giovannicalo/node-log
 ```
 
-> Not yet published
+> Not yet published to NPM. This will install it from GitHub.
 
 ## Usage
 

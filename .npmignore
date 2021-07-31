@@ -1,13 +1,13 @@
-**/*.spec.js
-.coveralls.yml
 .editorconfig
 .eslintignore
 .eslintrc.js
 .gitattributes
+.github
 .gitignore
 .npmignore
 .travis.yml
 .vscode
+**/*.spec.js
 coverage
 jest.config.js
 jsconfig.json

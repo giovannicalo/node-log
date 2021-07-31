@@ -1,5 +1,6 @@
 # Node Log
 
+[![Build Status](https://github.com/giovannicalo/node-log/actions/workflows/build.yml/badge.svg)](https://github.com/giovannicalo/node-log/actions/workflows/build.yml)
 [![Build Status](https://travis-ci.com/giovannicalo/node-log.svg?branch=master)](https://travis-ci.com/giovannicalo/node-log)
 [![Coverage Status](https://coveralls.io/repos/github/giovannicalo/node-log/badge.svg)](https://coveralls.io/github/giovannicalo/node-log)
 

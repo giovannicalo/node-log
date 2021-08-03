@@ -8,17 +8,16 @@
 		"url": "https://github.com/giovannicalo/node-log/issues"
 	},
 	"dependencies": {
-		"chalk": "^4.1.1"
+		"chalk": "^4.1.2"
 	},
 	"description": "Log",
 	"devDependencies": {
-		"coveralls": "^3.1.1",
-		"eslint": "^7.31.0",
+		"eslint": "^7.32.0",
 		"eslint-config-giovanni": "giovannicalo/eslint-config",
 		"jest": "^27.0.6"
 	},
 	"engines": {
-		"node": ">=16.5.0"
+		"node": "^16.6.0"
 	},
 	"homepage": "https://github.com/giovannicalo/node-log",
 	"keywords": ["log"],
@@ -30,7 +29,6 @@
 		"url": "https://github.com/giovannicalo/node-log.git"
 	},
 	"scripts": {
-		"coverage": "jest --coverageReporters=text-lcov | coveralls",
 		"lint": "eslint -f pretty .",
 		"prepublishOnly": "npm run lint && npm test",
 		"start": "jest --watch",

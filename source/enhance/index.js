@@ -3,6 +3,7 @@ const { inspect } = require("util");
 const chalk = require("chalk");
 
 const enhanceError = require("./error");
+const replaceValue = require("./replace-value");
 
 const enhance = (value) => {
 	if (chalk.level) {
@@ -19,7 +20,7 @@ const enhance = (value) => {
 	} else if (value instanceof Error) {
 		return value.stack.replace(/ {4}/gu, "\t");
 	} else if (typeof value === "object") {
-		return JSON.stringify(value, null, "\t");
+		return JSON.stringify(value, replaceValue, "\t");
 	} else {
 		return value;
 	}

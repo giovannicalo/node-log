@@ -17,7 +17,7 @@
 		"jest": "^27.2.0"
 	},
 	"engines": {
-		"node": "^16.9.1"
+		"node": ">=17.9.0"
 	},
 	"homepage": "https://github.com/giovannicalo/node-log",
 	"keywords": ["log"],

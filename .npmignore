@@ -5,7 +5,6 @@
 .github
 .gitignore
 .npmignore
-.travis.yml
 .vscode
 **/*.spec.js
 coverage

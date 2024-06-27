@@ -9,21 +9,22 @@ const enhance = (value) => {
 	if (chalk.level) {
 		if (value instanceof Error) {
 			return enhanceError(value);
-		} else if (typeof value === "string") {
-			return chalk.green(value);
-		} else {
-			return inspect(value, {
-				colors: true,
-				sorted: true
-			});
 		}
-	} else if (value instanceof Error) {
-		return value.stack.replaceAll(/ {4}/gu, "\t");
-	} else if (typeof value === "object") {
-		return JSON.stringify(value, replaceValue, "\t");
-	} else {
-		return value;
+		if (typeof value === "string") {
+			return chalk.green(value);
+		}
+		return inspect(value, {
+			colors: true,
+			sorted: true
+		});
 	}
+	if (value instanceof Error) {
+		return value.stack.replaceAll(/ {4}/gu, "\t");
+	}
+	if (typeof value === "object") {
+		return JSON.stringify(value, replaceValue, "\t");
+	}
+	return value;
 };
 
 module.exports = enhance;

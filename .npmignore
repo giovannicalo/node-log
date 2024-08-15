@@ -2,9 +2,6 @@
 .editorconfig
 .gitattributes
 .github
-.gitignore
-.npmignore
-.vscode
 coverage
 eslint.config.js
 jest.config.js

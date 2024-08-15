@@ -39,3 +39,7 @@ log.error`Foo bar ${new Error("Something went wrong")}`;
 ### `warning(strings: string[], ...values: any): void`
 
 Prints the given message, interpolating `strings` and enhanced `values`, in addition to the current UTC timestamp and log level.
+
+## Known Issues
+
+- Currently only works with CommonJS modules. It can't be used with ECMAScript modules.

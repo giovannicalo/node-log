@@ -19,7 +19,7 @@ const enhance = (value) => {
 		});
 	}
 	if (value instanceof Error) {
-		return value.stack.replaceAll(/ {4}/gu, "\t");
+		return value.stack.replaceAll(/ {4}/gv, "\t");
 	}
 	if (typeof value === "object") {
 		return JSON.stringify(value, replaceValue, "\t");

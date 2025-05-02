@@ -14,12 +14,12 @@ it("should enhance a bigint when colors are supported", () => {
 
 it("should enhance an error when colors are not supported", () => {
 	chalk.level = 0;
-	expect(enhance(new Error("Foo"))).toMatch(/^Error: Foo/u);
+	expect(enhance(new Error("Foo"))).toMatch(/^Error: Foo/v);
 });
 
 it("should enhance an error when colors are supported", () => {
 	chalk.level = 1;
-	expect(enhance(new Error("Foo"))).toMatch(/^\u001B\[93mError\u001B\[39m: Foo/u); // eslint-disable-line no-control-regex
+	expect(enhance(new Error("Foo"))).toMatch(/^\u001B\[93mError\u001B\[39m: Foo/v); // eslint-disable-line no-control-regex
 });
 
 it("should enhance a number when colors are supported", () => {

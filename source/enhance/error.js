@@ -9,7 +9,7 @@ const rootDirectory = findRoot(require.main.filename);
 const enhanceError = ({ message, name, stack }) => {
 	const enhancedStack = (stack || "").split("\n").slice(1).reduce((trace, item, index) => {
 		const match = item.match(
-			/^\s*at\s(?:(?<method>.+)\s\()?(?:(?<path>.+?)(?::(?<line>\d+):(?<column>\d+))?)\)?$/u
+			/^\s*at\s(?:(?<method>.+)\s\()?(?:(?<path>.+?)(?::(?<line>\d+):(?<column>\d+))?)\)?$/v
 		);
 		if (match) {
 			const { groups: { column, line, method, path } } = match;
@@ -29,10 +29,10 @@ const enhanceError = ({ message, name, stack }) => {
 					chalk.yellowBright(column)
 				}${
 					code ? `\n  ${
-						chalk.redBright(code.replace(/^\s*/u, ""))
+						chalk.redBright(code.replace(/^\s*/v, ""))
 					}\n  ${
 						chalk.cyanBright([...new Array(
-							column - code.match(/^\s*/u)[0].length - 1
+							column - code.match(/^\s*/v)[0].length - 1
 						).fill(" "), "^"].join(""))
 					}` : ""
 				}`;

@@ -1,6 +1,5 @@
 const { existsSync, readFileSync } = require("fs");
-
-const chalk = require("chalk");
+const { styleText } = require("util");
 
 const findRoot = require("./find-root");
 
@@ -22,16 +21,16 @@ const enhanceError = ({ message, name, stack }) => {
 				}  ${
 					method || "<unknown>"
 				}\n  ${
-					chalk.gray(path.replace(rootDirectory, "").replaceAll("\\", "/"))
+					styleText("gray", path.replace(rootDirectory, "").replaceAll("\\", "/"))
 				}:${
-					chalk.yellowBright(line)
+					styleText("yellowBright", line)
 				}:${
-					chalk.yellowBright(column)
+					styleText("yellowBright", column)
 				}${
 					code ? `\n  ${
-						chalk.redBright(code.replace(/^\s*/v, ""))
+						styleText("redBright", code.replace(/^\s*/v, ""))
 					}\n  ${
-						chalk.cyanBright([...new Array(
+						styleText("cyanBright", [...new Array(
 							column - code.match(/^\s*/v)[0].length - 1
 						).fill(" "), "^"].join(""))
 					}` : ""
@@ -41,7 +40,7 @@ const enhanceError = ({ message, name, stack }) => {
 		return trace;
 	}, "");
 	return `${
-		chalk.yellowBright(name)
+		styleText("yellowBright", name)
 	}: ${
 		message
 	}${

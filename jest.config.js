@@ -1,4 +1,7 @@
-module.exports = {
+const { defineConfig } = require("jest");
+
+module.exports = defineConfig({
 	collectCoverage: true,
-	collectCoverageFrom: ["source/**/*.js"]
-};
+	collectCoverageFrom: ["source/**/*.js"],
+	testEnvironment: "./test/environment"
+});

@@ -1,17 +1,17 @@
-const { inspect } = require("util");
-
-const chalk = require("chalk");
+const { inspect, styleText } = require("util");
 
 const enhanceError = require("./error");
 const replaceValue = require("./replace-value");
 
+const hasColors = styleText("green", "").includes("\u001B");
+
 const enhance = (value) => {
-	if (chalk.level) {
+	if (hasColors) {
 		if (value instanceof Error) {
 			return enhanceError(value);
 		}
 		if (typeof value === "string") {
-			return chalk.green(value);
+			return styleText("green", value);
 		}
 		return inspect(value, {
 			colors: true,

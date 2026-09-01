@@ -7,14 +7,12 @@
 	"bugs": {
 		"url": "https://github.com/giovannicalo/node-log/issues"
 	},
-	"dependencies": {
-		"chalk": "^4.1.2"
-	},
 	"description": "Log",
 	"devDependencies": {
 		"eslint": "^9.39.5",
 		"eslint-config-giovanni": "giovannicalo/eslint-config",
-		"jest": "^30.5.0"
+		"jest": "^30.5.0",
+		"jest-environment-node": "^30.5.0"
 	},
 	"engines": {
 		"node": ">=26.8.1"

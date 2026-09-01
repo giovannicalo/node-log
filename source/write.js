@@ -1,12 +1,12 @@
-const chalk = require("chalk");
+const { styleText } = require("util");
 
 const enhance = require("./enhance");
 
 const write = ({ color, level, strings, values }) => {
 	console.log(`[${
-		chalk.magenta(new Date().toISOString())
+		styleText("magenta", new Date().toISOString())
 	}] [${
-		chalk[color](level)
+		styleText(color, level)
 	}] ${strings.reduce((message, string, index) => {
 		return `${
 			message
